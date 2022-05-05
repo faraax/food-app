@@ -1,13 +1,13 @@
 import React from 'react'
 import Logo from '../../img/logo.png'
 import Avatar from '../../img/avatar.png'
-import { MdShoppingBasket } from 'react-icons/md'
+import { MdShoppingBasket, MdAdd, MdLogout } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import useAuth from '../../Hooks/useAuth'
 import { useAuthContext } from '../../Hooks/useAuthContext'
 import useLogout from '../../Hooks/useLogout'
-// import { getApp } from '../../Firebase/Config'
+
 
 export default function Header() {
     const [signInWithGoogle] = useAuth()
@@ -15,7 +15,7 @@ export default function Header() {
     const { user } = useAuthContext()
     const login = (e) => {
         e.preventDefault()
-        signInWithGoogle()
+        !user && signInWithGoogle()
     }
     return (
         <header className='fixed z-50 w-screen p-6 px-16'>
@@ -54,9 +54,6 @@ export default function Header() {
                             Service
                         </Link>
                     </li>
-                    {
-                        user && <p onClick={() => logout()} className='cursor-pointer'>Logout</p>
-                    }
                 </ul>
                 <div className='flex items-center justify-start relative'>
                     <MdShoppingBasket className='text-textColor text-2xl ml-8 cursor-pointer' />
@@ -69,9 +66,22 @@ export default function Header() {
                         src={user ? user.photoURL : Avatar}
                         whileTap={{ scale: 0.6 }}
                         alt="userprofile"
-                        className='w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl ml-7 cursor-pointer'
+                        className='w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl ml-7 cursor-pointer rounded-full'
                         onClick={login}
-                    />
+                    />{
+                        user && (
+                            <div className='w-40 flex flex-col bg-gray-50 shadow-lg rounded-lg absolute top-12 right-0'>
+                                {user && user.uid === "T0ghMzonngOuzWgzdlXStP65vvf2" && (<p className='px-3 py-2 flex items-center
+                                 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-text-base gap-3 rounded-lg'>
+                                    <Link className='flex items-center gap-3' to={'/createItem'}>
+                                        New Item<MdAdd />
+                                    </Link>
+                                </p>)}
+                                <p onClick={() => logout()} className='px-4 py-2 flex items-center
+                                 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-text-base gap-3 rounded-lg'>Logout <MdLogout /></p>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
 

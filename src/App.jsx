@@ -19,7 +19,7 @@ function App() {
     {
       authIsReady && (
         <AnimatePresence>
-          <div className="w-screen h-auto flex flex-col bg-slate-400">
+          <div className="w-screen h-auto flex flex-col bg-gray-300">
             <Header />
             <main className="mt-24 p-8 w-full">
               <Routes>
