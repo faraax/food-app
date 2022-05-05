@@ -1,0 +1,7 @@
+export { default as Home } from './Home/Home'
+export { default as About } from './About/About'
+export { default as Menu } from './Menu/Menu'
+export { default as Service } from './Service/Service'
+export { default as MainContainer } from './MainContainer/MainContainer'
+export { default as CreateContainer } from './CreateContainer/CreateContainer'
+export { default as NotFoundPage } from './NotFoundPage/NotFoundPage'
