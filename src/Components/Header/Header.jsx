@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Logo from '../../img/logo.png'
 import Avatar from '../../img/avatar.png'
-import { MdShoppingBasket, MdAdd, MdLogout } from 'react-icons/md'
+import { MdShoppingBasket, MdAdd, MdLogout, MdOutlineAdminPanelSettings } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import useAuth from '../../Hooks/useAuth'
@@ -77,14 +77,29 @@ export default function Header() {
                                 exit={{ opacity: 0, scale: 0.6 }}
                                 className='w-40 flex flex-col bg-gray-50 shadow-lg rounded-lg absolute top-12 right-0'>
                                 {/* Will Work on this Admin Thing */}
-                                {user && user.uid === "T0ghMzonngOuzWgzdlXStP65vvf2" && (<p className='px-3 py-2 flex items-center
+                                {user && user.uid === "T0ghMzonngOuzWgzdlXStP65vvf2" && (
+                                    <>
+                                        <p className='px-3 py-2 flex items-center
                                  cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-text-base gap-3 rounded-lg'>
-                                    <Link className='flex items-center gap-3' to={'/createItem'}>
-                                        New Item<MdAdd />
-                                    </Link>
-                                </p>)}
+                                            <Link className='flex items-center gap-3' to={'/createItem'}>
+                                                New Item<MdAdd />
+                                            </Link>
+                                        </p>
+                                        <p className='px-3 py-2 flex items-center
+                                 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-text-base rounded-lg'>
+                                            <Link className='flex items-center' to={'/admins'}>
+                                                Manage Admins
+                                                {/* <MdOutlineAdminPanelSettings /> */}
+                                            </Link>
+                                        </p>
+                                    </>
+                                )}
                                 <p onClick={() => logout()} className='px-4 py-2 flex items-center
-                                 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-text-base gap-3 rounded-lg'>Logout <MdLogout /></p>
+                                 cursor-pointer hover:bg-slate-100 transition-all
+                                 duration-100 ease-in-out text-text-base gap-3 rounded-lg'>
+                                    Logout
+                                    <MdLogout />
+                                </p>
                             </motion.div>
                         )
                     }

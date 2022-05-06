@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Header } from "./Components";
 import {
   About,
+  Admins,
   CreateContainer,
   Home,
   MainContainer,
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/*" element={<MainContainer />} />
                 {/* <Route path="/" element={<Home />} /> */}
                 <Route path="/createItem" element={<CreateContainer />} />
+                <Route path="/admins" element={<Admins />} />
                 {/* <Route path="/menu" element={<Menu />} />
             <Route path="/aboutus" element={<About />} />
             <Route path="/service" element={<Service />} />
