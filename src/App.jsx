@@ -4,7 +4,6 @@ import {
   About,
   Admins,
   CreateContainer,
-  Home,
   MainContainer,
   Menu,
   NotFoundPage,
