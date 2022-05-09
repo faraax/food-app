@@ -20,7 +20,7 @@ export default function Header() {
         !user ? signInWithGoogle() : setShowMenu(!showMenu)
     }
     return (
-        <header className='fixed z-50 w-screen pt-5 p-2 px-4 md:p-6 md:px-16'>
+        <header className='fixed z-50 w-screen pt-5 p-2 px-4 md:p-6 md:px-16 bg-gray-300'>
             {/* For Desktop View */}
             <div className='hidden md:flex w-full h-full'>
                 <Link to={'/'} className='flex items-center gap-2'>
@@ -100,13 +100,13 @@ export default function Header() {
                                     <>
                                         <p className='px-3 py-2 flex items-center
                                  cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-text-base gap-3 rounded-lg'>
-                                            <Link className='flex items-center gap-3' to={'/createItem'}>
+                                            <Link className='flex items-center gap-3' to={'/createItem'} onClick={() => setShowMenu(!showMenu)}>
                                                 New Item<MdAdd />
                                             </Link>
                                         </p>
                                         <p className='px-3 py-2 flex items-center
                                  cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-text-base rounded-lg'>
-                                            <Link className='flex items-center' to={'/admins'}>
+                                            <Link className='flex items-center' to={'/admins'} onClick={() => setShowMenu(!showMenu)}>
                                                 Manage Admins
                                             </Link>
                                         </p>
@@ -166,25 +166,25 @@ export default function Header() {
                                 <ul className='flex flex-col px-3 py-2 gap-5'>
                                     <li className='text-base text-textColor hover:bg-slate-100
                                     duration-100 transition-all ease-in-out cursor-pointer'>
-                                        <Link to={'/'}>
+                                        <Link to={'/'} onClick={() => setShowMenu(!showMenu)}>
                                             Home
                                         </Link>
                                     </li>
                                     <li className='text-base text-textColor hover:bg-slate-100 
                                     duration-100 transition-all ease-in-out cursor-pointer'>
-                                        <Link to={'/menu'}>
+                                        <Link to={'/menu'} onClick={() => setShowMenu(!showMenu)}>
                                             Menu
                                         </Link>
                                     </li>
                                     <li className='text-base text-textColor hover:bg-slate-100 
                                     duration-100 transition-all ease-in-out cursor-pointer'>
-                                        <Link to={'aboutus'}>
+                                        <Link to={'aboutus'} onClick={() => setShowMenu(!showMenu)}>
                                             About us
                                         </Link>
                                     </li>
                                     <li className='text-base text-textColor hover:bg-slate-100 
                                     duration-100 transition-all ease-in-out cursor-pointer'>
-                                        <Link to={'/service'}>
+                                        <Link to={'/service'} onClick={() => setShowMenu(!showMenu)}>
                                             Service
                                         </Link>
                                     </li>
@@ -194,14 +194,14 @@ export default function Header() {
                                     <>
                                         <p className='px-3 py-2 flex items-center
                                  cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-text-base rounded-lg'>
-                                            <Link className='flex items-center' to={'/admins'}>
+                                            <Link className='flex items-center' to={'/admins'} onClick={() => setShowMenu(!showMenu)}>
                                                 Manage Admins
                                                 {/* <MdOutlineAdminPanelSettings /> */}
                                             </Link>
                                         </p>
                                         <p className='px-3 py-2 flex items-center
                                  cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-text-base gap-3 rounded-lg'>
-                                            <Link className='flex items-center gap-3' to={'/createItem'}>
+                                            <Link className='flex items-center gap-3' to={'/createItem'} onClick={() => setShowMenu(!showMenu)}>
                                                 New Item<MdAdd />
                                             </Link>
                                         </p>

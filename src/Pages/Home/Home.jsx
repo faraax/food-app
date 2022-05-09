@@ -34,26 +34,18 @@ export default function Home() {
                     src={HeroBg}
                     className='ml-auto h-420 w-full lg:w-auto lg:h-650'
                     alt="Hero" />
-                {/* <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center px-32 py-4'>
-                    <div className="w-190 p-4 flex bg-cardOverLay backdrop-blur-md rounded-3xl items-center justify-center flex-col">
-                        <img src={IceCream} className='w-40 -mt-20' alt="Ice cream" />
-                        <p className='text-xl mt-4 font-semibold text-textColor'>Icecream</p>
-                        <p className='text-md text-center text-lightTextGray font-semibold my-3'>Chocolate & Vanilla</p>
-                        <p className='text-sm font-semibold text-headingColor'><span className='text-xs text-red-600'>Rs.</span> 249</p>
-                    </div>
-                </div> */}
-                {
-                    Data.heroData.map((data, index) => (
-                        <div key={index} className='w-full h-full absolute top-0 left-0 flex items-center justify-center px-32 py-4'>
-                            <div className="w-190 p-4 flex bg-cardOverLay backdrop-blur-md rounded-3xl items-center justify-center flex-col">
-                                <img src={data.src} className='w-40 -mt-20' alt="Ice cream" />
-                                <p className='text-xl mt-4 font-semibold text-textColor'>{data.name}</p>
-                                <p className='text-md text-center text-lightTextGray font-semibold my-3'>{data.desc}</p>
+                <div className='w-full h-full absolute top-0 left-0 flex items-center justify-center xl:px-32 py-16 gap-4 flex-wrap'>
+                    {
+                        Data.heroData.map((data, index) => (
+                            <div key={index} className="lg:w-190 p-4 flex bg-cardOverLay backdrop-blur-md rounded-3xl items-center justify-center flex-col drop-shadow-lg">
+                                <img src={data.src} className='w-20 lg:w-40 -mt-10 lg:-mt-20' alt="Ice cream" />
+                                <p className='text-base lg:text-xl mt-2 lg:mt-4 font-semibold text-textColor'>{data.name}</p>
+                                <p className='text-[12px] lg:text-sm text-center text-lightTextGray font-semibold my-1 lg:my-3'>{data.desc}</p>
                                 <p className='text-sm font-semibold text-headingColor'><span className='text-xs text-red-600'>Rs.</span> {data.price}</p>
                             </div>
-                        </div>
-                    ))
-                }
+                        ))
+                    }
+                </div>
             </div>
         </section>
     )
