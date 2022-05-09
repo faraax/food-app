@@ -21,7 +21,7 @@ function App() {
         <AnimatePresence exitBeforeEnter>
           <div className="w-screen h-auto flex flex-col bg-gray-300">
             <Header />
-            <main className="mt-16 md:mt-24 p-8 w-full">
+            <main className=" p-8 w-full">
               <Routes>
                 <Route path="/*" element={<MainContainer />} />
                 {/* <Route path="/" element={<Home />} /> */}
